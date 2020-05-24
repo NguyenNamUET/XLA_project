@@ -18,8 +18,7 @@ def my_oilify(image_path, radius=4, intensityLevelSize=10, gap=1):
         for j in range(radius, imgWidth - radius, gap):
             #
             grayLevel = np.zeros((intensityLevelSize, 4))  # Store the number of each gray level
-            graySum = [0, 0, 0]  # for the final high frequency gray level mean calculation
-            # traversal statistics for small areas
+            
             for m in range(-radius, radius):
                 for n in range(-radius, radius):
                     pixlv = int(((img[i + m, j + n, 0] + img[i + m, j + n, 1] + img[i + m, j + n, 2]) / 3) * (
